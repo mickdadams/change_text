@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Text Replacer",
+  "version": "1.0",
+  "description": "Automatically change 'a' to 0 on webpages.",
+  "permissions": ["scripting", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
